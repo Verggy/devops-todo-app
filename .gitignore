@@ -1,0 +1,6 @@
+# Ignore the virtual environment
+venv/
+# Ignore the MongoDB data directory
+docker/db/
+# Ignore the Python cache
+src/app/__pycache__/
