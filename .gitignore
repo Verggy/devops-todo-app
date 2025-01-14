@@ -2,5 +2,11 @@
 venv/
 # Ignore the MongoDB data directory
 docker/db/
+# Ignore the Jenkins home directory
+docker/jenkins_home/
+# Ignore the Jenkins plugins directory
+docker/jenkins_plugins/
+# Ignore the groovy init scripts directory
+docker/secrets
 # Ignore the Python cache
 src/app/__pycache__/

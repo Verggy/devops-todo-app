@@ -5,6 +5,7 @@ services:
     build:
       context: ..
       dockerfile: docker/Dockerfile.app
+    container_name: todo-app
     ports:
       - "8000:8000"
     volumes:
@@ -19,3 +20,24 @@ services:
       - "27017:27017"
     volumes:
       - ./db:/data/db
+
+  jenkins:
+    image: jenkins/jenkins:lts
+    container_name: jenkins
+    user: "1000:1000" # Explicitly set the user to UID 1000
+    ports:
+      - "8080:8080"
+      - "50000:50000" # For agent communication
+    environment:
+      - JAVA_OPTS=-Djenkins.install.runSetupWizard=false
+      - JENKINS_ADMIN_PASSWORD_FILE=/run/secrets/jenkins-admin-password
+    volumes:
+      - ./jenkins_home:/var/jenkins_home
+      - ./jenkins_plugins:/usr/share/jenkins/ref/plugins
+      - ./init.groovy.d:/usr/share/jenkins/ref/init.groovy.d
+    secrets:
+      - jenkins-admin-password
+
+secrets:
+  jenkins-admin-password:
+    file: ./secrets/jenkins-admin-password.txt
