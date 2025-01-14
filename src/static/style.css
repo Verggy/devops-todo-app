@@ -1,0 +1,160 @@
+/* General Styles */
+body {
+    font-family: "Roboto", sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f6f9;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    box-sizing: border-box;
+}
+
+#add-todo-form {
+    width: 500px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #4caf50;
+    margin-top: 20px;
+    font-weight: 600;
+}
+
+h2 {
+    font-size: 1.5rem;
+    color: #4caf50;
+    margin-bottom: 10px;
+}
+
+/* Form Styles */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 90%; /* Adjust width to be less wide */
+    max-width: 500px;
+    margin: 20px 0;
+}
+
+input {
+    padding: 12px;
+    margin: 10px 0;
+    font-size: 1rem;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+input:focus {
+    border-color: #4caf50;
+    outline: none;
+    box-shadow: 0 0 4px rgba(76, 175, 80, 0.5);
+}
+
+button {
+    padding: 12px;
+    font-size: 1rem;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: auto; /* Buttons should no longer be full width */
+    align-self: flex-start; /* Align buttons to the left */
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+button:focus {
+    outline: none;
+}
+
+/* Button container styles for Show Todos */
+div button {
+    width: auto; /* Make buttons shorter */
+    padding: 10px 20px; /* Adjust padding for a better look */
+    margin-right: 10px;
+}
+
+div button:last-child {
+    margin-right: 0;
+}
+
+/* To-Do List Styles */
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    max-width: 500px;
+    margin: 20px auto;
+}
+
+li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+    gap: 15px; /* Added gap between the todo text and buttons */
+}
+
+li:hover {
+    transform: translateY(-4px);
+}
+
+li .todo-text {
+    font-size: 1.1rem;
+    flex-grow: 1;
+    margin-right: 20px; /* Add space between text and the buttons */
+}
+
+li .todo-actions button {
+    background-color: #f44336;
+    margin-left: 10px;
+    padding: 8px 15px;
+}
+
+li .todo-actions button:first-child {
+    background-color: #4caf50;
+}
+
+li .todo-actions button:hover {
+    background-color: #d32f2f;
+}
+
+/* Additional styling */
+@media (max-width: 600px) {
+    form {
+        width: 90%;
+        padding: 10px;
+    }
+
+    button {
+        width: 100%; /* On small screens, make the button full-width */
+    }
+
+    h1 {
+        font-size: 2rem; /* Make the title font smaller for smaller screens */
+    }
+
+    h2 {
+        font-size: 1.2rem; /* Make subtitle font smaller for smaller screens */
+    }
+}

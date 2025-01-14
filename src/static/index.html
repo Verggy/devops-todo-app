@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>DevOps To-Do App</title>
+        <link rel="stylesheet" href="/static/style.css" />
+    </head>
+    <body>
+        <h1>DevOps To-Do App</h1>
+
+        <!-- Form to add a new To-Do -->
+        <div id="add-todo-form">
+            <h2>Add a To-Do</h2>
+            <form id="addTodoForm">
+                <input type="text" id="title" placeholder="Title" required />
+                <input type="text" id="description" placeholder="Description" />
+                <button type="submit">Add To-Do</button>
+            </form>
+        </div>
+
+        <!-- Buttons to filter and view To-Dos -->
+        <div>
+            <button onclick="fetchTodos()">Show All Todos</button>
+            <button onclick="fetchIncompleteTodos()">
+                Show Incomplete Todos
+            </button>
+            <button onclick="fetchDoneTodos()">Show Completed Todos</button>
+        </div>
+
+        <!-- Lists to display Todos -->
+        <div>
+            <h2>To-Do List</h2>
+            <ul id="todoList"></ul>
+        </div>
+
+        <!-- Add the script to handle actions -->
+        <script src="/static/script.js"></script>
+    </body>
+</html>
